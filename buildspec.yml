@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - echo "Starting build..."
+  build:
+    commands:
+      - echo "Building HTML project..."
+  post_build:
+    commands:
+      - echo "Updating files in the S3 bucket..."
+      - aws s3 sync web-fe/ s3://b1-application --delete
