@@ -89,7 +89,7 @@ function getPhotos(text)
     console.log("query value : ", text)
     let getUrl = "https://x7e7p521wg.execute-api.us-east-1.amazonaws.com/final/search?q=" + text
     console.log("testing")
-
+    var data_array = []
     fetch(getUrl, requestOptions)
             .then(response => response.json())
             .then(data => {
