@@ -3,6 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>demo</title>
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,18 +26,16 @@
 
     </head>
     <body>
+      <h1> SEARCH OR UPLOAD IMAGES</h1>
       <div> SEARCH OR UPLOAD IMAGES<div>
-        <h1> SEARCH OR UPLOAD IMAGES</h1>
-
         <div class="container">
 
             <div class="app">
 
               <div class="input-group">
-                    <input id="note-textarea" type="text" class="form-control" placeholder="Search for a photo" name="search">
-
+                    <input class="searchbar" type="text" title="Search">
                     <div class="input-group-btn">
-                      <button class="btn btn-default" type="submit" onclick="searchPhoto()"><i class="fa fa-search"></i></button>
+                      <button class="btn btn-default" type="submit" onclick="search()"><i class="fa fa-search"></i></button>
                     </div>
                   </div>
                 <button id="start-record-btn" title="Start Recording">Start Recording</button>
@@ -67,6 +66,7 @@
       <div class="banner-section" id="img-container">
         <p id="displaytext"></p>
       </div>
+      <div id="photos_results">
     </div>
     
         </div>

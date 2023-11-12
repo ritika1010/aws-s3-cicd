@@ -56,6 +56,68 @@ function searchPhoto()
 
 
 }
+function search()
+{
+	var searchBox = document.getElementsByClassName('searchbar')[0];
+	console.log(searchBox.value);
+
+	if (!searchBox.value)
+	{
+		alert('Please enter a valid text');
+	}
+	else
+	{
+		getPhotos(searchBox.value.trim().toLowerCase());
+	}
+}
+
+function getPhotos(text)
+{
+	document.getElementsByClassName('searchbar')[0].value = '';
+
+    let myHeaders = new Headers();
+
+       
+        myHeaders.append("X-Api-Key", "D6lHdlUSxTagnzPiqKgsF2UtmFEZIfKs19TSxNVJ");
+    let requestOptions = {
+            crossDomain: true,
+            method: 'GET',
+            headers: myHeaders,
+            // data: file,
+        };
+
+    console.log("query value : ", text)
+    let getUrl = "https://x7e7p521wg.execute-api.us-east-1.amazonaws.com/final/search?q=" + text
+    console.log("testing")
+
+    fetch(getUrl, requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                console.log("----- reponse received is", data)
+                console.log(data['results'])
+                if (data["results"].length !== 0) {
+                      resp_data  = data
+                      resp_data.results.forEach(function(obj) {var json = {};
+                      json["bannerImg1"] = obj["url"];
+                      data_array.push(json) });
+                      var data = {}
+                      data["images"] = data_array;
+                      console.log("CONVERTED RESPONSE --- " + data);
+
+                      data.images.forEach( function(obj) {
+                          var img = new Image();
+                          img.src = obj.bannerImg1;
+                          img.setAttribute("class", "banner-img");
+                          img.setAttribute("alt", "effy");
+                          document.getElementById("img-container").appendChild(img);
+                          document.getElementById("displaytext").style.display = "block";
+                      });
+              }
+              else
+                  alert("No Pictures")
+          });
+}
+
 
 function uploadPhoto()
 {
