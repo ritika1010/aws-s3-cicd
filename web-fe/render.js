@@ -78,7 +78,7 @@ function getPhotos(text)
     let myHeaders = new Headers();
 
        
-        myHeaders.append("X-Api-Key", "D6lHdlUSxTagnzPiqKgsF2UtmFEZIfKs19TSxNVJ");
+        // myHeaders.append("X-Api-Key", "D6lHdlUSxTagnzPiqKgsF2UtmFEZIfKs19TSxNVJ");
     let requestOptions = {
             crossDomain: true,
             method: 'GET',
