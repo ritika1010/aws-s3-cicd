@@ -87,7 +87,7 @@ function getPhotos(text)
         };
 
     console.log("query value : ", text)
-    let getUrl = "https://x7e7p521wg.execute-api.us-east-1.amazonaws.com/final/search?q=" + text
+    let getUrl = "https://djvqc9yr81.execute-api.us-east-1.amazonaws.com/final/search?q=" + text
     console.log("testing")
     var data_array = []
     fetch(getUrl, requestOptions)
@@ -149,7 +149,7 @@ function uploadPhoto()
             body: file
         };
     
-        fetch("https://x7e7p521wg.execute-api.us-east-1.amazonaws.com/final/b2-store-images/" + fileName.toString(), requestOptions)
+        fetch("https://djvqc9yr81.execute-api.us-east-1.amazonaws.com/final/photos-bucket-v1/" + fileName.toString(), requestOptions)
             .then(response => response.text())
             .then(result => {
               console.log(result)
