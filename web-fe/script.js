@@ -199,4 +199,3 @@ function getAllNotes() {
 function deleteNote(dateTime) {
   localStorage.removeItem('note-' + dateTime); 
 }
-

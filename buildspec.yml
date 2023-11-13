@@ -11,4 +11,4 @@ phases:
   post_build:
     commands:
       - echo "Updating files in the S3 bucket..."
-      - aws s3 sync web-fe/ s3://cf-v1-clientbucket-10dlf3s6pq8tt --delete
+      - aws s3 sync web-fe/ s3://b1-application --delete
